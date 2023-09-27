@@ -2,10 +2,9 @@
 import { ref } from 'vue';
 import Nav from './Nav.vue';
 const props = defineProps({
-  active: String | undefined,
-  id: String | undefined,
+  active: String || undefined,
+  id: String || undefined,
 })
-const id = ref(props.id)
 const showNav = ref(false)
 </script>
 
@@ -22,14 +21,12 @@ const showNav = ref(false)
         <div class="flex flex-col gap-[20px]">
           <RouterLink to="/sign-up" :class="{ text_active: active == 'SignUp' }" v-if="props.id  == undefined"
             class="active:text-white active:border-[1] active:underline">Đăng Ký</RouterLink>
-          <RouterLink :to="{path: '/auth/' + id + '/guess'}" :class="{ text_active: active == 'Guess' }" v-if="props.id != undefined"
-            class="active:text-white active:border-[1] active:underline">Đoán vui</RouterLink>
         </div>
         <div class="flex flex-col gap-[20px]">
           <RouterLink to="/sign-in" :class="{ text_active: active == 'SignIn' }" v-if="props.id  == undefined"
             class="active:text-white active:border-[1] active:underline">Đăng Nhập</RouterLink>
           <RouterLink to="/" v-show="props.id  != undefined" 
-            class="active:text-white active:border-[1] active:underline">Đăng xuất</RouterLink>
+            class="active:text-white active:border-[1] active:underline">Xoá tab là đăng xuất</RouterLink>
         </div>
       </div>
     </div>

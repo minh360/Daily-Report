@@ -1,5 +1,4 @@
 const axios = require('axios')
-const bcryptjs = require('bcryptjs');
 module.exports = {
     getUsername: async function getUsername (idUser) {
         return await axios.request({
@@ -10,8 +9,7 @@ module.exports = {
             }
         })
     },
-    addNewAccount: function addNewAccount (username,password) {
-        bcryptjs.hash(password, saltRounds, function(err, hash) {
+    addNewAccount: async function addNewAccount (username,password) {
             return await axios.request({
                 method: "POST",
                 url: "https://thuyettrinh.herokuapp.com/auth/sign_up",
@@ -23,13 +21,8 @@ module.exports = {
                     password: hash
                 }
             })
-        });
     },
     checkExist: async function checkExist (username,passwordEnter) {
-        if (passwordEnter){
-
-        }
-        bcryptjs.compare(obj.passwordEnter, obj.passwordData, function(err, result) {
             return await axios.request({
                 method: "POST",
                 url: "https://vxmm.herokuapp.com/auth/sign_up/check",
@@ -38,7 +31,5 @@ module.exports = {
                 },
                 data: {username: username}
             })
-        })
-        
-    },
+        }
 }

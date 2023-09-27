@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import Menu from '../components/Menu.vue'
 const protect = ref(true)
 const texts = ref(['Hướng dẫn bảo khuyên nên nói giọng lên xuống chứ không giữ 1 tông !!!', 'Hết'])
-const id = ref('123')
+const id = ref()
 </script>
 
 <template>

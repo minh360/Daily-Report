@@ -31,10 +31,10 @@ const router = createRouter({
       component: () => import('../views/OffDayView.vue')
     },
     {
-      path: '/auth/:id/guess',
-      name: 'Guess',
-      component: () => import('../views/GuessView.vue')
-    }
+      path: '/admin',
+      name: 'AdminClient',
+      component: () => import('../views/AdminView.vue')
+    },
   ]
 })
 
