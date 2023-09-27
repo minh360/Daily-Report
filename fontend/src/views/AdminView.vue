@@ -5,6 +5,7 @@ import Note from '../components/Note.vue';
 import Off from '../components/Off.vue';
 import Report from '../components/Report.vue';
 import Check from '../components/Check.vue';
+import Button from '../components/Button.vue';
 
 const id = ref('123')
 const name = ref('')
@@ -31,11 +32,11 @@ const showTab = ref()
             class="rounded-[25px] ring-4 border-2 focus:outline-0 focus:ring focus:ring-pink-500 ring-offset-2 h-[30px] px-[10px] py-[20px]"
             placeholder="Hãy nhập tên"
           />
-          <button class="mt-[20px] rounded-[10px] border-2 border-black h-[50px] w-[50px] bg-[green] text-[20px] text-white">Tìm</button>
-          <button class="mt-[20px] rounded-[10px] border-2 border-black h-[50px] w-[100px] bg-[violet] text-[20px] text-white" @click="()=>showTab=TAB.NOTE">+ Note</button>
-          <button class="mt-[20px] rounded-[10px] border-2 border-black h-[50px] w-[100px] bg-[vio] text-[20px] text-white" @click="()=>showTab=TAB.OFF">+ Off</button>
-          <button class="mt-[20px] rounded-[10px] border-2 border-black h-[50px] w-[100px] bg-[gray] text-[20px] text-white" @click="()=>showTab=TAB.REPORT">+ Report</button>
-          <button class="mt-[20px] rounded-[10px] border-2 border-black h-[50px] w-[100px] bg-[pink] text-[20px] text-white" @click="()=>showTab=TAB.CHECK">Duyệt</button>
+          <Button :text="'Tìm'" :rounded="10" :with="50" :background="'green'"/>
+          <Button :text="'+ Note'" :rounded="10" :background="'violet'" :with="100" @click="()=>showTab=TAB.NOTE" />
+          <Button :text="'+ Off'" :rounded="10" :background="''" :with="100" @click="()=>showTab=TAB.OFF" />
+          <Button :text="'+ Report'" :rounded="10" :background="'gray'" :with="100" @click="()=>showTab=TAB.REPORT" />
+          <Button :text="'Duyệt'" :rounded="10" :background="'pink'" :with="100" @click="()=>showTab=TAB.CHECK" />
         </div>
         <div class="w-full h-full flex justify-center items-center">
             <Note v-show="showTab == TAB.NOTE" />

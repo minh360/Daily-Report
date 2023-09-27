@@ -29,3 +29,14 @@ app.get(/.*/, function (req, res) {
 var server = require("http").Server(app)
 
 server.listen(port)
+
+// const io = require("socket.io")(server, {
+//     cors: {
+//         origin: ["https://vxmm.herokuapp.com"],
+//         methods: ["GET", "POST", "PUT"]
+//     }
+// });
+
+// io.on('connection', (socket) => {
+
+// }

@@ -9,8 +9,7 @@
       <input v-model="password"
         class="rounded-[25px] ring-4 border-2 focus:outline-0 focus:ring focus:ring-pink-500 ring-offset-2 h-[30px] px-[10px] py-[20px]"
         placeholder="Mật khẩu">
-      <button class="mt-[20px] rounded-[50px] border-2 border-black h-[50px] w-[260px] bg-[green] text-[20px] text-white"
-        @click="signInClient">Đăng nhập</button>
+      <Button :text="'Đăng nhập'" :rounded="50" :with="260" :background="'green'" @click="signInClient" />
     </div>
   </main>
 </template>
@@ -19,6 +18,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 import Menu from '../components/Menu.vue'
+import Button from '../components/Button.vue';
 const account = ref('')
 const password = ref('')
 const message = ref('')

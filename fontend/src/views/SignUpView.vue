@@ -3,7 +3,7 @@ import {ref} from 'vue'
 import Menu from '../components/Menu.vue'
 // import {checkExist} from '../../backend/api'
 import { useRouter } from 'vue-router'
-
+import Button from '../components/Button.vue';
 const name = ref("")
 const username = ref("")
 const password = ref("")
@@ -78,7 +78,7 @@ const addNewUser = async () => {
         <input v-model="password" class="rounded-[25px] ring-4  border-2 focus:outline-0 focus:ring focus:ring-pink-500 ring-offset-2 h-[30px] px-[10px] py-[20px]" placeholder="Mật khẩu" >
         <input v-model="rePassword" class="rounded-[25px] ring-4  border-2 focus:outline-0 focus:ring focus:ring-pink-500 ring-offset-2 h-[30px] px-[10px] py-[20px]" placeholder="Nhập lại mật khẩu" >
         <div class="text-[red] px-[20px] font-bold flex text-center bg-blur-sm text-[20px]">{{ message }}</div>
-        <button class="mt-[20px] rounded-[50px] rounded-full border-2 border-black h-[50px] w-[260px] bg-[green] text-[20px] text-white" @click="addNewUser">Đăng ký</button>
+        <Button :text="'Đăng ký'" :rounded="50" :with="260" :background="'green'" @click="addNewUser" />
     </div>
   </main>
 </template>
